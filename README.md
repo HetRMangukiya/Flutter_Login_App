@@ -67,7 +67,7 @@ Follow these steps to get started with the project:
 
 ## Demo
 
-Check out the [YouTube video](https://www.youtube.com/watch?v=your-video-link) for a step-by-step tutorial.
+Check out the [YouTube video](https://youtu.be/_pFYZ2GjKkc) for a step-by-step tutorial.
 
 | Sign In Screen | Home Screen |
 |----------------|-------------|
