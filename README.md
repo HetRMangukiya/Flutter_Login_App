@@ -4,15 +4,15 @@ This repository is dedicated to demonstrating various authentication methods usi
 
 ## Features
 
-- **Google Sign-In: Integrate Google authentication into your Flutter app.
-- **Email/Password Authentication: Allow users to sign in with email and password.
-- **User Sign-Up: Enable new users to register with your app.
-- **Anonymous Sign-In: Allow users to try your app without creating an account.
-- **Password Recovery: Implement password reset functionality.
-- **Facebook Sign-In: Authenticate users via Facebook.
-- **Twitter Sign-In: Enable Twitter authentication.
-- **GitHub Sign-In: Authenticate users using their GitHub accounts.
-- **Apple Sign-In: Support for signing in with Apple ID.
+- Google Sign-In: Integrate Google authentication into your Flutter app.
+- Email/Password Authentication: Allow users to sign in with email and password.
+- User Sign-Up: Enable new users to register with your app.
+- Anonymous Sign-In: Allow users to try your app without creating an account.
+- Password Recovery: Implement password reset functionality.
+- Facebook Sign-In: Authenticate users via Facebook.
+- Twitter Sign-In: Enable Twitter authentication.
+- GitHub Sign-In: Authenticate users using their GitHub accounts.
+- Apple Sign-In: Support for signing in with Apple ID.
 
 ## Prerequisites
 
