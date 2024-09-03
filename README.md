@@ -1,12 +1,18 @@
-# Implement Google Sign-In with Firebase Using GetX in Flutter
+# Flutter Firebase Authentication with GetX
 
-This repository demonstrates how to implement Google Sign-In using Firebase and GetX in a Flutter application.
+This repository is dedicated to demonstrating various authentication methods using Firebase and GetX in a Flutter application. The project evolves over multiple videos in a comprehensive playlist, covering everything from Google Sign-In to more advanced authentication methods.
 
 ## Features
 
-- **Google Sign-In**: Easily integrate Google authentication into your Flutter app.
-- **Firebase Authentication**: Securely manage user authentication with Firebase.
-- **GetX State Management**: Simplify state management and dependency injection with GetX.
+- **Google Sign-In: Integrate Google authentication into your Flutter app.
+- **Email/Password Authentication: Allow users to sign in with email and password.
+- **User Sign-Up: Enable new users to register with your app.
+- **Anonymous Sign-In: Allow users to try your app without creating an account.
+- **Password Recovery: Implement password reset functionality.
+- **Facebook Sign-In: Authenticate users via Facebook.
+- **Twitter Sign-In: Enable Twitter authentication.
+- **GitHub Sign-In: Authenticate users using their GitHub accounts.
+- **Apple Sign-In: Support for signing in with Apple ID.
 
 ## Prerequisites
 
@@ -14,7 +20,7 @@ Before running this project, ensure you have the following set up:
 
 - Flutter SDK
 - Firebase project
-- Google Sign-In credentials
+- Authentication credentials for Google, Facebook, Twitter, GitHub, and Apple
 
 ## Getting Started
 
@@ -24,7 +30,7 @@ Follow these steps to get started with the project:
 
     ```bash
     git clone https://github.com/HetRMangukiya/Flutter_Login_App.git
-    cd flutter-google-signin-getx
+    cd flutter-login-app
     ```
 
 2. **Install dependencies**:
@@ -60,18 +66,21 @@ Follow these steps to get started with the project:
     flutter run
     ```
 
+## Video Playlist
+
+This project is accompanied by a series of YouTube videos that guide you through implementing various authentication methods:
+
+1. [Google Sign-In with Firebase in Flutter](https://youtu.be/_pFYZ2GjKkc)
+2. [Email/Password Sign-In, Sign-Up, Anonymous Sign-In, and Password Recovery](https://youtu.be/_SHiU0o-Th8)
+3. *(Upcoming)* Facebook, Twitter, GitHub, and Apple Sign-In
+
+Be sure to check out the playlist for step-by-step instructions: [Flutter Firebase Authentication Playlist](https://www.youtube.com/playlist?list=PLhqXECKYtfqAvUe9kQq80DQWY8X9z4rpF).
+
 ## Usage
 
 - **Sign In**: Tap the "Sign In with Google" button to authenticate with your Google account.
 - **Sign Out**: Tap the "Sign Out" button to sign out of your Google account.
-
-## Demo
-
-Check out the [YouTube video](https://youtu.be/_pFYZ2GjKkc) for a step-by-step tutorial.
-
-| Sign In Screen | Home Screen |
-|----------------|-------------|
-| ![Sign In](https://github.com/user-attachments/assets/ca3ad2b8-b65d-4143-9d0e-72251236b4ef) | ![Home](https://github.com/user-attachments/assets/1206d9e8-0043-4145-9dcf-3ff1d0cd4e60) |
+- **Password Recovery**: Users can reset their password if they forget it.
 
 ## Contributing
 
