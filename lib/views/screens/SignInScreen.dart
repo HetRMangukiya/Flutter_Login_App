@@ -62,51 +62,6 @@ class SignInScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 12),
-          InkWell(
-            onTap: () async {
-              await controller.signInWithFacebook();
-            },
-            child: Center(
-              child: Text(
-                "Apple Sign in",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 12),
-          InkWell(
-            onTap: () async {
-              await controller.signInWithFacebook();
-            },
-            child: Center(
-              child: Text(
-                "Twitter Sign in",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 12),
-          InkWell(
-            onTap: () async {
-              await controller.signInWithFacebook();
-            },
-            child: Center(
-              child: Text(
-                "GitHub Sign in",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 12),
         ],
       ),
       onSignup: (val) async {

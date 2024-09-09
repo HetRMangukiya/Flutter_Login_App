@@ -23,14 +23,16 @@ class SignInController extends GetxController {
         return null;
       }
 
-      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
 
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
 
-      UserCredential userCredential = await firebaseAuth.signInWithCredential(credential);
+      UserCredential userCredential =
+          await firebaseAuth.signInWithCredential(credential);
       User? user = userCredential.user;
 
       if (user != null) {
@@ -58,38 +60,59 @@ class SignInController extends GetxController {
 
   Future<User?> signInWithFacebook() async {
     try {
+      // Trigger the Facebook sign-in process
       final LoginResult result = await FacebookAuth.instance.login();
 
+      // Check if the login was successful
       if (result.status == LoginStatus.success) {
-        final AccessToken accessToken = result.accessToken!;
-        final OAuthCredential credential = FacebookAuthProvider.credential(accessToken.tokenString);
+        final AccessToken? accessToken = result.accessToken;
 
-        UserCredential userCredential = await firebaseAuth.signInWithCredential(credential);
-        User? user = userCredential.user;
+        if (accessToken != null) {
+          // Create a credential from the access token
+          final OAuthCredential facebookAuthCredential =
+          FacebookAuthProvider.credential(accessToken.tokenString);
 
-        if (user != null) {
-          Get.snackbar(
-            "Login Successful",
-            "Welcome ${user.displayName ?? 'User'}!",
-            backgroundColor: Colors.green,
-            colorText: Colors.white,
-          );
-          Get.offNamed('/home'); // Navigate to HomePage
+          // Sign in to Firebase with the Facebook credential
+          UserCredential userCredential =
+          await firebaseAuth.signInWithCredential(facebookAuthCredential);
+          User? user = userCredential.user;
+
+          if (user != null) {
+            // Successful login
+            Get.snackbar(
+              "Login Successful",
+              "Welcome ${user.displayName ?? 'User'}!",
+              backgroundColor: Colors.green,
+              colorText: Colors.white,
+            );
+            Get.offNamed('/home'); // Navigate to HomePage
+          }
+
+          return user;
         }
-
-        return user;
-      } else {
+      } else if (result.status == LoginStatus.cancelled) {
+        // If login was canceled
         Get.snackbar(
-          "Facebook Sign In Failed",
-          result.message ?? "An error occurred.",
+          "Login Cancelled",
+          "You cancelled the Facebook sign-in.",
+          backgroundColor: Colors.orange,
+          colorText: Colors.white,
+        );
+        return null;
+      } else if (result.status == LoginStatus.failed) {
+        // If login failed
+        Get.snackbar(
+          "Login Failed",
+          result.message ?? "An unknown error occurred",
           backgroundColor: Colors.red,
           colorText: Colors.white,
         );
         return null;
       }
     } catch (e) {
+      // Catch and display any errors that occur
       Get.snackbar(
-        "Facebook Sign In Error",
+        "Login Failed",
         e.toString(),
         backgroundColor: Colors.red,
         colorText: Colors.white,
@@ -99,9 +122,11 @@ class SignInController extends GetxController {
     }
   }
 
+
   Future<void> handleSignup(SignupData signupData) async {
     try {
-      UserCredential userCredential = await firebaseAuth.createUserWithEmailAndPassword(
+      UserCredential userCredential =
+          await firebaseAuth.createUserWithEmailAndPassword(
         email: signupData.name!,
         password: signupData.password!,
       );
@@ -130,7 +155,8 @@ class SignInController extends GetxController {
 
   Future<void> handleLogin(LoginData loginData) async {
     try {
-      UserCredential userCredential = await firebaseAuth.signInWithEmailAndPassword(
+      UserCredential userCredential =
+          await firebaseAuth.signInWithEmailAndPassword(
         email: loginData.name!,
         password: loginData.password!,
       );

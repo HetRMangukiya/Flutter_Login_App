@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="facebook_app_id">1048768159938943</string>
+    <string name="app_name">HR Code Experts</string>
+    <string name="facebook_app_id">220380710070048</string>
+    <string name="facebook_client_token">e977c72f0c06a2b5bee5a867e243b663</string>
 </resources>
